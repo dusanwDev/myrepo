@@ -1,0 +1,93 @@
+append child je za nodes ne moze samo neki stirng da 
+se ubaci
+tag name varaca sve tag element u HTML-u, a ako hocemo
+tag lemente nekog diva onda moramo da uzmemo id tog diva
+skladistimo u varijablu u na tu vrijablu pozovemo
+tagname
+----------------------------------------------------------
+
+Proveri da li je element objekat ili bilo sta drugo
+// function isArr(check) {
+//   if (typeof check === "object") {
+//     console.log("input is array");
+//   } else {
+//     console.log("It is not array");
+//   }
+// }
+// isArr(input);
+// console.log(typeof input);
+
+// //Drugi nacin
+// var is_array = function (input) {
+//   if (toString.call(input) === "[object Array]") return true;
+//   return false;
+// };
+--------------------------------------------------------
+ako imamo 
+let fja = ()=>{
+let nekivarl;
+}
+
+svaki put kad se funckija ispali on nekivar proglassava
+
+--------------------------------------------------------
+constructor(){
+this.element = document.byid.value
+}
+
+static nekaKlasa(){
+this.element = 0; ne vidi property a moze u obicno klasu
+}
+-----------------------------------------------------
+Kada kliknemo na link i hocemo da nadjemo id elementa
+za scroll nije lose
+Za ovo je potrebno da linkovi imaju event listener
+const id = e.currentTarget.getAttribute("href").slice(1);
+const element = document.getElementById(id);
+---------------------------------------------------------
+setInterval fires again and again in intervals,
+while setTimeout only fires once.
+---------------------------------------------------------
+You can put function inside array
+
+let arr = [28,function(){console.log("Hi from an array")}];
+arr[1]();
+----------------------------------------------------------
+Practical use of closure is debouncing and this
+
+const newTag = function(open, close) {
+    return function(content) {
+        return open + content + close
+    }
+}
+
+const bold = newTag('<b>', '</b>')
+const italic = newTag('<i>', '</i>')
+
+console.log(bold(italic("This is my content!")))
+----------------------------------------------------------
+map when displaying numbers is without {}
+map se primenjuje za svaki element u nizu i nemenja 
+duzinu niza mora da ima return, filter vraca na osnovu 
+uslova
+
+let file = filtered.map((number) => `<li>${number}</li>`).join("");
+
+RegEx za mail
+/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+---------------------------------------------------------
+Formatiranje brojeva za 10,000 ali ako hocemo da ih vratimo
+u oblk sa kojim mozemo nesto da radimo(number) onda
+replace(",", "")
+
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+--------------------------------------------------------
+Obrisi element sa neke pozicije         
+this.notesNoteList.splice(i, 1);
+-------------------------------------------------------
+Filter
+  this.technologies = this.technologies.filter(
+              (v, i, a) =>
+                a.findIndex((t) => t.toLowerCase() === v.toLowerCase()) === i
+            );

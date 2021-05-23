@@ -1,0 +1,448 @@
+disssable privacy ng analytics off
+za shemtic workflow:  ng npm cache clean --force
+
+Ako se pojavi greska u VS code all extentions are disabled
+disejluj live server i zatvo pa otvori vs cde
+----------------------------------------------------------
+AKo se pojavi ovo:
+
+At line:1 char:1
++ ng new test-app
++ ~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+oNda ovo 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+u terminal
+---------------------------------------------------------
+<app-root></app-root> u index.html gives a place for
+alngular to start woF#rkinf
+
+main.ts initialises a angular project
+polyfils.ts is for browser compatibility
+--------------------------------------------------------
+we dont want to use contstructor to do too mch
+we want to use ngOnInit
+
+---------------------------------------------------------
+angular.json styles mozemo da importujemo neki bootstrap
+ili neki drugi stil
+---------------------------------------------------------
+<app-root></app-root> je komponenta
+fajl koji gleda server je index.html
+
+app.component.ts > selector:'app-root' je informacija koju
+angular treba da bi u index.html <app-root></app-root>
+zamenio sa komponentama iz src > app
+
+index.html <app-root></app-root>
+
+main.ts je prvi kod koji se izvrsava
+---------------------------------------------------------
+Angular uses components to build web pages and uses modules
+to bundle different pises(components) into packages.
+
+Modules gives Angular information abot which features
+my app uses
+
+--------------------------------------------------------
+[(ngModel)] is used for implementing 2way binding
+With the ng-model directive you can bind the value of 
+an input field to a variable created in AngularJS. radi 
+
+---------------------------------------------------------
+import { FormsModule } from '@angular/forms';
+i u imports stavis FormsModule
+----------------------------------------------
+10.0
+------------------------------------------------------
+In Angular, a module is a mechanism to group components, 
+directives, pipes and services that are related, 
+in such a way that can be combined with other 
+modules to create an application. 
+An Angular application can be thought of as a puzzle 
+where each piece (or each module) is needed to be able 
+to see the full picture.
+--------------------------------------------------------
+How angular gets loaded in browser
+
+single page app means that single page is served by server
+in angular case that is index.html
+
+<app-root></<app-root> - it is a component. All files that
+have component in their extention in app file are related
+to <app-root></<app-root> 
+
+1. Angula pocinje na main.ts
+2. u Main.ts se bootstrapuje(podize) appModule
+3. u app.module.ts se podize appComponenta i cita sve sto 
+pise u app.component.ts(najvaznije selektor)
+4. u index.html se app-root ubacuje u browser
+--------------------------------------------------------
+If we want to print something into teplate we use {{}}
+if we want to change some property of HTML element or 
+of directive we use []
+-------------------------------------------------------
+Dorectives are instructions in the DOM
+ngClass works only with condition
+[innerText]=property
+
+[ngClass] = "{'class-name': uslov > 5}"
+[ngStyle]="{
+              backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+---------------------------------------------------------
+../ move up one folder
+-----------------------------------------------------
+<ul>
+  <li
+    *ngFor="let item of items; let i = index"
+    [ngStyle]="{
+      backgroundColor: i % 2 === 0 ? 'red' : 'black',
+      color: i % 2 === 0 ? 'white' : 'blue'
+    }"
+  >
+    {{ item.name }} {{ item.number }} {{ i }}
+  </li>
+</ul>
+--------------------------------------------------
+Za instaliranje bootstapa
+npm install ngx-bootstrap bootstrap --save
+
+i u style.css
+@import "~bootstrap/dist/css/bootstrap.css";
+
+---------------------------------------------------------
+Kao u JS kada god se okine inpit event posledjujemo ebent 
+obj i onda ispisujemo vrednost
+(input) = onUpdateEvent($event)
+  onUpdateEvent(event: Event) {
+    this.serverwithevent = (<HTMLInputElement>event.target).value;
+  }
+---------------------------------------------------------
+1. stavljamo @Input() decoartor ispred propertija
+u koji hocemo da upisemo podatke iz parent komponente.
+[element] = "properti iz parent komponente"
+2. ako hocemo da u html child kopmonentu stampamo podatke
+onda mora imena propertija da bude isto kao u parent
+komponenti ts fajlu
+
+Pravimo event @Output() nekievent =  new EventEmiter<string>()
+kada napravimo metodu koja poziva 
+nekievent.emit(ovde prima parametre tipa <string ili nesto drugo>)
+i glavnoj komponenti u child tagu pozivamo 
+(nekievent) = Metoda($event) ili prazno
+
+i iz parent komponente upisujemo podatke
+----------------------------------------------------------
+Everything we place between opening and closed tag of 
+our own component will be by default lost in the DOM. Thats
+why we use ng-template. Usable for tabs
+---------------------------------------------------------
+USE input and output togather
+
+Template variable
+--------------------------------------------------------
+We use local reference(#) value if we want to save data only
+for example at the time of clicking. It holds reference to 
+the whole element. We can use # only in template.
+When we use inputs we need to specify in the method that
+it is a InputElement:
+
+displayInputReference(inputreference: HTMLInputElement) 
+{     console.log(inputreference.value); }
+
+We can use tect content on other element basicly like
+selecting elements in JS
+
+in template we can go {{preference.textcontent}} to get
+textcontent of paragraph or {{inputreference.value}} to
+get value of input
+------------------------------------------------------
+ViewChild is of type ElmenetRef which we need to ipornt
+we shouldnt set value with viewchild. We use it to acces
+DOM and get value before we call a method, so if we use
+elementrefernce we pass it as a prameter in function
+imidiatly after a click
+
+Declaration @ViewChild('forViewChild') viewchildpoperty: ElementRef;
+
+ne bilduje se odmah tako da je nedostupna u konstruktoru
+
+this.viewchildpoperty.nativeElement.style.color = 'blue';
+
+  @ContentChild('paramet unutar child komponente u glavnoj
+komponennti a potrebno je da ima ng-content')
+  contentChild: ElementRef
+--------------------------------------------------------
+Service is a class with a specific purpse, in our case
+its purpose is to fetch data from server and cast it to
+right format. Slicno kao interface. It can be used for
+sharind data, calculation(aplcation logic), and external
+interaction
+
+ng g s - for generating service
+
+<> - get vraca observable i mi moramo da kazemo u kom formatu
+hocemo da observable bude kastovana 
+this.http.get<User[]>
+
+Service mora da se registruje u app.modules
+ > provider array da bi mogle sve komponente koriste
+
+
+Emmit array of objects:
+  @Output() outputPosts = new EventEmitter<any[]>();
+
+  @Output() outputElement = new EventEmitter<any[]>();
+this.outputElement.emit([
+      {
+        id: 1,
+        name: 'Dusan',
+      },
+      {
+        id: 2,
+        name: 'Marko',
+      },
+      {
+        id: 3,
+        name: 'Darko',
+      },
+    ]);
+----------------------------------------------------------
+Life cycle hooks
+If a new component is created in angular angular goes
+to couple different phases in this creation process and it
+wil giv us a chance to hook into this phases and execute 
+some code
+
+ngOnChanges - executed right at the start when new component
+is created but it is also called whenever proprties
+decorated with Input are changed and <input>properties
+
+@Input element : {}
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges');
+    console.log(changes); //daje objekat element
+  }
+
+Set up the component after Angular sets the input 
+properties. Constructors should do no more than 
+set the initial local variables to simple values.
+Keep in mind that a directive's data-bound 
+input properties are not set until after 
+construction. If you need to initialize 
+the directive based on those properties, 
+set them when ngOnInit() runs.
+-------------------------------------------------------
+https://www.tektutorialshub.com/angular/renderer2-angular/
+The Renderer2 class is an abstraction provided by Angular 
+in the form of a service that allows to 
+manipulate elements of your app without 
+having to touch the DOM directly. 
+
+The nativeElement Property contains the 
+reference to the underlying DOM object.
+
+Kada menjamo preko ElementRef onda menjamo direktno DOM
+element sto nije dobro a kada koristimo Renderer2
+-------------------------------------------------------
+* indicates to Angular that directive is structural
+
+ng-template is element which is not rendered but it allows
+us to define template for Angular to use once it determines
+that this template needs to be rendered because it cond
+ition is true
+-------------------------------------------------------
+ako hocemo event objekat onda moramo da stavimo ovaj
+drugi parametar nakon click
+  @HostListener('click', ['$event']) onClick(event: Event) {
+    console.log(event.target);
+    this.renderer.setStyle(this.elRef.nativeElement, 'color', 'blue');
+  }
+---------------------------------------------------------
+[routerLink]="['/servers', server.id]"
+
+routerLinkActive="active"
+[routerLinkActiveOptions]="{ exact: true }"
+routerLink="/" home
+activatedRoute = Provides access to information about a 
+route associated with a component that is loaded in an 
+outlet. Currently active route
+-------------------------------------------------------
+Niz objekata
+
+
+servers: { id: number; name: string; status: string }[] = [];
+  getServer(id: number) {
+    const server = this.servers.find(
+      (s) => {
+        return s.id === id;
+      }
+    );
+    return server;
+  }
+--------------------------------------------------------
+subject umesto eent emmiter za komunikaciju 
+preko komponeni
+----------------------------------------------------
+ng add @ng-bootstrap/ng-bootstrap
+--------------------------------------------------------
+https://www.npmjs.com/package/@angular/fire
+In imports
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+
+
+u constructor u service 
+public afs: AngularFirestore
+
+u enviroment.ts
+  firebaseConfig: {
+    apiKey: 'AIzaSyCyJA1fT5zaSdDJXn107YnTGLmQnWeW27E',
+    authDomain: 'ng-complete-guide-c0062.firebaseapp.com',
+    databaseURL: 'https://ng-complete-guide-c0062-default-rtdb.firebaseio.com',
+    projectId: 'ng-complete-guide-c0062',
+    storageBucket: 'ng-complete-guide-c0062.appspot.com',
+    messagingSenderId: '70015594914',
+    appId: '1:70015594914:web:0f3efbbcaf236e531c42fb',
+    measurementId: 'G-3JKSBC909G',
+  },
+
+
+In service
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument,
+} from '@angular/fire/firestore';
+
+ npm i --save firebase @angular/fire
+--------------------------------------------------------
+BehSubj gives subscribers acces to previous emited value
+even if they are not subscribed at the point of time 
+that value was emited. That means we can get access to 
+the currently active user even if we only subscribed
+after that user has been emited. If we fetch data 
+and we need that token at this point of time we can 
+still get acces to user token
+-----------------------------------------------------
+Core Module(sadrzi sve ono sto je u providers) opcion
+Shared Module(sadrzi sve ono sto je zajednicko za neke
+komponente direktive pop-up-komponente...)
+Feature Module - imamo 3 komponente za shoping,
+ 3 komponente za order i onda napravimo da feature modela
+jedan za shoping komopnente drugi za order komponente
+
+kada implemetiramo lazy loading treba da opet pokrenemo 
+ng serve
+
+trebalo bi da brisemo nepotrebne importe da bi izvukli 
+sto vise kada govorimo o performansama, nakon sto dodamo
+lazy loading moramo da restartujemo. Najbolje je koristiti
+lazy loading tamo gde postoji i najmanja sansa da korisnik
+nece stici
+
+preolading lazy-load
+Preloading modules improves UX by loading parts of your
+app in the 
+background so users don't have to wait for the elements
+to download 
+when they activate a route.
+posto ucitvamo kod tek kada dodjemo na odredjenu rutu,
+moze se desiti da ukoliko je internet spor da se kod 
+sporije ucitava, zato je mozda bolje da prvo ucitamo
+lazuy-loaded modulrs da bi se izbeglo
+
+komanda ng-build --prod koristi se 
+pre nego sto zelimo da okacimo angular na server da bi 
+smanjio velicinu fajlova
+
+Ukoliko se pri ng build --prod pojavi error za form. "property
+controls doesn exist on type abastract control" onda
+treba da u ts fajl ubacimo 
+get imeMetode(){
+return (this.instancaFormGroup.get('ingredients') as FormArray).controls
+}
+------------------------------------------------------
+Ako hocemo da dignemo na hosting(firebase) ondak
+1. instalirati npm install -g firebase-tools(kod nas vec imamo)
+2. kada se instalira onda firebase init
+3. treba da odaberemo firebase projekat
+4. Configure as single page app YES Github NO overite NO
+5. firebase deploy
+----------------------------------------------
+JIT vs AOT
+https://stackoverflow.com/questions/41450226/just-in-time-jit-vs-ahead-of-time-aot-compilation-in-angular?answertab=votes#tab-top
+------------------------------------------------------
+when we need tochange state(add new recipe) we dispatch
+action(JS objcet with indetifier and payload)
+
+sent to 
+
+reducer is JS function that gets current state which 
+is stored in the store and action as a input and then
+in the reducer we can use action indetifier find out
+what kind of action it is. example ADD_REC DEL_REC
+-------------------------------------------------
+Kad se koristi sub:Subscription ondamora ngDestroy da se 
+unsubskrajbuje
+-------------------------------------------------------
+animals : Observable<any[]>
+this.cat =this.db.object(dsa)
+this.dog =this.db.object(dsa)
+
+//daje arr of observables
+this.animals=Observable.combineLatest(this.cat,this.dog)
+u HTML moze *ngFor = 'animal of animals | async'
+
+za BehSubject {{(dog | async)?.name}}
+-----------------------------------------------------
+pipe is when we want to have multiple operators
+https://www.youtube.com/watch?v=ewcoEYS85Co
+pipe(filter(v=>{}))
+
+Observable emits vale until certain condition
+returns true. Take value untill name is not == something
+.pipe(takeWhile(data=>{
+          return data.appliedDevelopers!==null
+        }))
+
+tap operator is not affecting type of observable
+-----------------------------------------------------
+mergeMap() ide u pipe combines 2 into one ,
+ concat() static emits one 
+obj and then second, forkJoin static wait 
+untill all are done and get all of them at once an 
+merges into one
+-------------------------------------------------
+.pipe(
+        filter((value) => {
+          return value === 'Djilas';
+        })
+      )
+
+import { HttpClientModule} from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+-----------------------------------------
+<div *ngIf="bool; else elseBlock">
+  <h1>Display</h1>
+</div>
+<ng-template #elseBlock>
+  <h1>Nothing</h1>
+</ng-template>
+------------------------------------------------------
+u DeactivateGuard
+export interface CanComponetLeave{canLeave:()=>boolean}
+2. guard implements CanDeactivate<CanCOmponentLeave>
+3. CanDeactivare(compnent: CanComponentLeave){
+if(component.canLeave){
+return component.canLeave();
+}
+return true;
+}
+4. KOmponenta koja primenjju interace canComponentLeave
+canLeave(){if(){} return true}

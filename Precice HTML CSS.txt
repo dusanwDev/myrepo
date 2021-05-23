@@ -1,0 +1,196 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+fontawsemo kit:
+<script src="https://kit.fontawesome.com/c81f9c71f2.js" crossorigin="anonymous"></script>
+twiter: <i class="fab fa-twitter"></i>
+face-thin:<i class="fab fa-facebook-f"></i>
+face-round:<i class="fab fa-facebook"></i>
+face-square<i class="fab fa-facebook-square"></i>
+instagram: <i class="fab fa-instagram"></i>
+youtube:  <i class="fab fa-youtube"></i
+location: <i class="fas fa-map-marker-alt"></i>
+telephone: <i class="fas fa-phone"></i>
+hamburger: <i class="fas fa-bars"></i>
+shopping: <i class="fas fa-shopping-cart"></i>
+credit-card:<i class="far fa-credit-card"></i>
+dollar: <i class="fas fa-dollar-sign"></i>
+money_bill : <i class="fas fa-money-bill-alt"></i>
+user: <i class="fas fa-user"></i>
+trash: <i class="far fa-trash-alt"></i>
+cart : <i class="fas fa-shopping-cart"></i>
+heart:<i class="fas fa-heart"></i>
+search: <i class="fas fa-search"></i>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+----------------------------------------------------------
+Ako hocemo jedan element da gurnemo levo 
+.header>div :nth-child(3) margin-left: auto;
+-------------------------------------------------------------------------------------------------------
+max-width za header i overflow hidden
+max-width:dozvoljava da se sadrzaj smanju a ,width ce forsirati npr 800px bez obzira na velicinu stranice,
+kada predjemo 800px dobicemo neiskorscen prostor
+max-width 600px cannot exced 600px
+min-width 600px cannot be smaller than 600px, cim je manje od 600px breaks
+@media min width kada je VECE od neceg uradi nesto
+@media max width kada je MANJE od neceg uradi nesto
+-------------------------------------------------------------------------------------------------------
+da bude krug u donjem desnom uglu kao u music site. ROditelj je kvadrat koji izgleda kao krug
+.home-page-circle-3 {
+  position: absolute;
+  width: 45vw;
+  height: 45vw;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.home-page-circle-3::before {
+  content: "";
+  position: absolute;
+  transform: translate(40%, 40%);
+  background: rgb(52, 87, 178, 0.1);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+------------------------------------------------------------
+vh,vw koristimo kada zelimo da nesto uvek bude x posto ekrana
+-------------------------------------------------------------
+Kada hocemo da footer zalepimo za dno a nemamo dovoljan sadrzaj koji bi to izveo onda stavljamo, html height 100% i 
+body min heigh 100% i footer margin-top 0
+-------------------------------------------------------------------------------------------------------------------
+za animacju za form bitno je da stavimo u label after za border-bottom i tranlsalte -100%,rel pozicija za form i treba
+u body display:felx flexdirection colmn
+--------------------------------------------------------------
+  /*browser ne postuje top bottom margine i padding za inline elemente*/
+  /*ako hocemo da se margine i padding postuju za inline ali da ne budu blok onda ovo*/
+  display: inline-block;
+--------------------------------------------------------------
+higher you are the lower staking order.
+lower you are higher is stacking order
+--------------------------------------------------------------------
+
+Svaki paran ili neparan 
+tr:nth-child(even) {
+  background-color: rgb(201, 196, 196);
+}
+--------------------------------------------------------------------
+da nema duplih granica za tabelu
+border-colapse:colapse;
+-----------------------------------------------------
+Section vs div
+
+Ima jos linkova u visual code:
+https://www.youtube.com/watch?v=Eyndz5R-Vkg
+https://www.youtube.com/watch?v=swWeWesZVZU
+
+https://stackoverflow.com/questions/4781077/html5-best-practices-section-header-aside-article-elements
+
+A section is thematic grouping of content. Every section should be identifed by heading as a child element
+Examples of sections would be chapters, the various tabbed pages in a tabbed dialog box, or the numbered sections of a thesis. 
+A Web site’s home page could be split into sections for an introduction, news items, and contact information.
+The <section> element is not a generic container element. When an element is needed only for styling purposes or as a 
+convenience for scripting, authors are encouraged to use the <div> element instead.
+section – Used for grouping together thematically-related content. Sounds like a div element, but it’s not. The div has no semantic meaning. 
+Before replacing all your div’s with section elements, always ask yourself: “Is all of the content related?”
+A section can be used to group things thematicly.
+
+Ako treba da ima naslov onda section ili article
+If we have title that described by a paragraf or video or image it is section because they belong toogeter. Ako recimo odemo na sajt a poslove i ividmo oglas
+taj oglas moze da postoji na svakom drugom sajtu ili samostalno pa koristimo article
+
+Article: content is a standalone content ako nije nista od ova 2 onda div
+Ako postoje delovi koji daju znacenje stranici i nisu standalone content and they tell me i should use a section tag
+
+When we use article or section they should have h imidatly after article or section tag
+
+Primer je novina: u Novini postoji vise sekcija(sport,kultura,zabava). Svaka sekcija ima vise clanaka(article)
+
+article element is used to denote chunk of content that can standalone by itself. A conntent that can be removed from the side and still make sense
+----------------------------------------------------
+Make images 2x times and then shrink them
+
+figcaption ide unutar figure
+------------------------------------------------------
+1x,2x,3x predstavljaju broj piksela u jednoj taxki
+https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/
+-------------------------------------------------------
+display:grid;
+place-items:center; je kao align items+ justify content
+----------------------------------------------------
+za margine moze vw
+----------------------------------------------------
+
+-------------------------------------------------------
+z-index radi ako imamo position aktiviran, transform 
+scale,flex(za decu)
+https://www.youtube.com/watch?v=uS8l4YRXbaw
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context
+---------------------------------------------------------
+Apsolutne jedinice: PX
+Percentage: used for width
+Relative units: There are two types of relative units.
+1. Relative to font-size, 
+2.relative to viewport
+
+em relative to parent fontsize, Ako ne stavimo na parent
+onda on ide navise u hirerhiji dok ne nadje neku vrednost
+za fontsize
+
+Problem sa em je taj sto kako naznize dodeljume em vrednosti
+on ce mnoziti svaku em vrednost odozgo
+
+rem relative to root(html) za font-size
+em za padding im margin ali ne mora da znaci
+ni
+if we do em to font-size prop gleda na parent. Ako radis
+na bilo koji drugi properti(margin padding) ne gleda na parent
+nego gleda font-size njegovog elementa
+
+VIDI ZA ONU DUGMAD 
+
+Ako stavimo na 
+h1{
+fontsize:24px; 
+margin-bottom 1em//24px
+ marginreight:2em; //48px
+}
+
+h1{
+fontsize:3rem; 
+margin-bottom .5em//bice .5 od 3rem
+ marginreight:2rem; //2 x vece od 3rem
+}
+
+ Max width odredjuje kolika je maks sirina nekog elementa, nece prerasti vrednost max sirine */
+ min width nikad nece biti manje od date vrednost */
+Nije lose da se max width stavlja za img jer kako raste
+ekran kvalitet slike moze da se pogorsa ako koristimo width
+ Moze i width i max i min width u istom propertiju. Nije bitan redosled 
+
+Za @media bitan je redosled ako stavimo @media(minw400)
+pa onda @mediaminw 600px drugi ce da pobedi
+
+
+Za flex:
+za linkove justify-contetn space beetwen mozda i nije 
+najbolja opcija jer na velikim ekranima moze da se previse
+rastegne.Neki nacin da se ovo zaobidje je juctify:center
+pa margin lef-right 1em. Ali sve zavici kako nas sajt izgleda
+za a:hover bi trebalo i a:focus
+
+Nije lose da se stavi nakon nav:a hover i focus,
+da nazovemo link na kojoj smo strani kao current
+link i da na njega stavimo border i boju koja nije na hover
+da bi rekli korisnicima da nema poente ad se klikne na 
+npr. home jer su vec na home
+
+za kontejner u hederu treba staviti max width
+
+za img{max-width:100%; display:block;}
+---------------------------------------------------------
+klasa ima prednost u odnosu na tag
