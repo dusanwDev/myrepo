@@ -450,3 +450,5 @@ return true;
 }
 4. KOmponenta koja primenjju interace canComponentLeave
 canLeave(){if(){} return true}
+
+resolver sluzi da pauzira ucitavanje rute dok se ne uzmu neki podaci
