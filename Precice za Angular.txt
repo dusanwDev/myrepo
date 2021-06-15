@@ -33,6 +33,10 @@ ili neki drugi stil
 fajl koji gleda server je index.html
 
 app.component.ts > selector:'app-root' je informacija koju
+
+-----------------------------------------------------------
+resolver bi trebalo za svaku komponentu posebno. 
+Reolver sluzi da pauzira rutiranje dok se ne ucitaju podaci
 angular treba da bi u index.html <app-root></app-root>
 zamenio sa komponentama iz src > app
 
