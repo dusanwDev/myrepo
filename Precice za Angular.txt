@@ -452,3 +452,7 @@ return true;
 canLeave(){if(){} return true}
 
 resolver sluzi da pauzira ucitavanje rute dok se ne uzmu neki podaci
+
+concat() ceka da se sve observables zavrse
+swithemap() starts new one as soon as it arrives and terminets previous observable
+mergeMap() cita sve observable kako koja stigne
