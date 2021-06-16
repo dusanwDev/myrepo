@@ -91,3 +91,5 @@ Filter
               (v, i, a) =>
                 a.findIndex((t) => t.toLowerCase() === v.toLowerCase()) === i
             );
+First Letter Uppercase
+this.cateogryName = data['categoryName'].charAt(0).toUpperCase() +  data['categoryName'].slice(1);;
