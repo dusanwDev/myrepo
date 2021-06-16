@@ -457,3 +457,5 @@ concat() ceka da se sve observables zavrse
 swithemap() starts new one as soon as it arrives and terminets previous observable. Nice for typeahed searches.(rxjs website)
 mergeMap() cita sve observable kako koja stigne
 
+ng-container *ngFor, ng-template *ngIf, ng-content put some content in it
+https://www.freecodecamp.org/news/everything-you-need-to-know-about-ng-template-ng-content-ng-container-and-ngtemplateoutlet-4b7b51223691/
