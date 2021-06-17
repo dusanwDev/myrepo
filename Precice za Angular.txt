@@ -472,3 +472,6 @@ https://medium.com/@paynoattn/3-common-mistakes-i-see-people-use-in-rx-and-the-o
 
 Fetching multiple elementRefs
 https://stackoverflow.com/questions/40165294/access-multiple-viewchildren-using-viewchild
+
+take out duplicates 
+Array.from(new Set(users))
