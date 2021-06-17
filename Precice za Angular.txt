@@ -34,6 +34,7 @@ fajl koji gleda server je index.html
 
 app.component.ts > selector:'app-root' je informacija koju
 
+
 -----------------------------------------------------------
 resolver bi trebalo za svaku komponentu posebno. 
 Reolver sluzi da pauzira rutiranje dok se ne ucitaju podaci
@@ -468,3 +469,6 @@ https://blog.strongbrew.io/how-share%28%29-can-reduce-network-requests/
 
 Pod 2
 https://medium.com/@paynoattn/3-common-mistakes-i-see-people-use-in-rx-and-the-observable-pattern-ba55fee3d031
+
+Fetching multiple elementRefs
+https://stackoverflow.com/questions/40165294/access-multiple-viewchildren-using-viewchild
