@@ -462,3 +462,7 @@ https://www.freecodecamp.org/news/everything-you-need-to-know-about-ng-template-
 
 
 https://www.slatch.io/ 
+
+If you subscribe to a cold http observable twice, you’ll have two backend requests.
+https://blog.strongbrew.io/how-share%28%29-can-reduce-network-requests/
+
