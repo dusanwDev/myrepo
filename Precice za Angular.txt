@@ -466,3 +466,5 @@ https://www.slatch.io/
 If you subscribe to a cold http observable twice, you’ll have two backend requests.
 https://blog.strongbrew.io/how-share%28%29-can-reduce-network-requests/
 
+Pod 2
+https://medium.com/@paynoattn/3-common-mistakes-i-see-people-use-in-rx-and-the-observable-pattern-ba55fee3d031
