@@ -1,3 +1,5 @@
+JS is a compiled language
+
 append child je za nodes ne moze samo neki stirng da 
 se ubaci
 tag name varaca sve tag element u HTML-u, a ako hocemo
