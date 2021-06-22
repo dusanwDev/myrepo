@@ -457,7 +457,7 @@ resolver sluzi da pauzira ucitavanje rute dok se ne uzmu neki podaci
 concat() ceka da se sve observables zavrse
 swithemap() starts new one as soon as it arrives and terminets previous observable. Nice for typeahed searches.(rxjs website)
 mergeMap() cita sve observable kako koja stigne
-
+combineLates() - combines multiple stram into a new stream. It uses last emited value from each stream and it wont emit anything untill all stream in combine latest have emited atleast once
 ng-container *ngFor, ng-template *ngIf, ng-content put some content in it
 https://www.freecodecamp.org/news/everything-you-need-to-know-about-ng-template-ng-content-ng-container-and-ngtemplateoutlet-4b7b51223691/
 
