@@ -93,6 +93,8 @@ Filter
               (v, i, a) =>
                 a.findIndex((t) => t.toLowerCase() === v.toLowerCase()) === i
             );
+2.nd way            
+let newPeople = people.filter(person=>person.id!==id)
 First Letter Uppercase
 this.cateogryName = data['categoryName'].charAt(0).toUpperCase() +  data['categoryName'].slice(1);;
 
