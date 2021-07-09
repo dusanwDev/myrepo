@@ -1,1 +1,3 @@
 UseEffect slicno kao Onint
+
+State: when we need to rerender and update app based on what user has done.
