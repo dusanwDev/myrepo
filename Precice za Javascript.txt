@@ -101,3 +101,5 @@ this.cateogryName = data['categoryName'].charAt(0).toUpperCase() +  data['catego
 WASM is a representation format more akin to Assembly (hence, its name) that can be processed by a JS engine by skipping the parsing/compilation that the JS engine normally does.
 
 Prototype is propery on a function that point to a object
+-----------------------------------------------------------------------------------------------------------------------------------------
+info.substring(0,200) do nekoliko karaktera
