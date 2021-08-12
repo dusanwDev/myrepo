@@ -477,4 +477,6 @@ https://stackoverflow.com/questions/40165294/access-multiple-viewchildren-using-
 take out duplicates 
 Array.from(new Set(users))
 
+Prevent Keys
+(keydown.space)="$event.preventDefault()"
 
