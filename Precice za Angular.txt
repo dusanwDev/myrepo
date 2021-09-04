@@ -483,3 +483,15 @@ Prevent Keys
 //TrackBy
 If we asign same data to array by default angular will re-render everything inside of *ngFor. But if we put track by it will render only when we change some data and it will re render only whhen we change data. Also if we have obj inside arr {name:darko,id:1} and we change id it will only re-render that object
 *ngFor="let user of users;trackBy:trackById" - trackById(name,user){return user.id } 
+
+FILTER PIPE----------------------------------------------------------------------------------------------------------------------------------------------------------
+ transform(value: string, userInput: string, prpname: string): unknown { 
+    let reg = new RegExp(`^${value}`, 'gi');
+    return value
+      ? dishes.filter((item) => {
+          return item.dishName.match(reg);
+        })
+      : dishes;
+  }
+ 
+ | filter: userInput:'performer'"
