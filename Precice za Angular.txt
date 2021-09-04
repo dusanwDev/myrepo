@@ -4,6 +4,11 @@ za shemtic workflow:  ng npm cache clean --force
 Ako se pojavi greska u VS code all extentions are disabled
 disejluj live server i zatvo pa otvori vs cde
 ----------------------------------------------------------
+D injection
+constructor(service:service){
+}
+when we do this Injector handles crateing object(instance of class Service) 
+----------------------------------------------------------
 AKo se pojavi ovo:
 
 At line:1 char:1
