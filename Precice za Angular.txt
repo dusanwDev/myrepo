@@ -500,3 +500,6 @@ FILTER PIPE---------------------------------------------------------------------
   }
  
  | filter: userInput:'performer'"
+ ------------------------------------------------------
+ Resolver:
+The interface defines a resolve() method that is invoked when the navigation starts. The router waits for the data to be resolved before the route is finally activated. Ceka da se ucitaju podaci pa onda ide na rutu
