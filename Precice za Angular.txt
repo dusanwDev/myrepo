@@ -460,11 +460,16 @@ canLeave(){if(){} return true}
 resolver sluzi da pauzira ucitavanje rute dok se ne uzmu neki podaci
 
 concat() ceka da se sve observables zavrse
-swithemap() starts new one as soon as it arrives and terminets previous observable. Nice for typeahed searches.(rxjs website)
-mergeMap() cita sve observable kako koja stigne
+concatMap()- returns in order. Litle bit slower because it is listening to the source, gets value and proces them one by one
+swithemap() starts new one as soon as it arrives and terminets previous observable. Nice for typeahed searches.(rxjs website). gets latest emited value
+mergeMap() cita sve observable kako koja stigne.If we have Inner observables has to emit a value for a whole observable to update. If we have multiple data sources
+that we want to merge them into one where one of data sources is the one is telling you when emmision hppens
 combineLates() - combines multiple stram into a new stream. It uses last emited value from each stream and it wont emit anything untill all stream in combine latest have emited atleast once
 shareReplay() - shares observable with all of subscribers. next time useres comes to the page it just reemits all values that it has. FOrm of cahcing
+exaustMap() - 
+
 ng-container *ngFor, ng-template *ngIf, ng-content put some content in it
+Ng template confitionaly renders somethind in the dom ng-container renders nothing
 https://www.freecodecamp.org/news/everything-you-need-to-know-about-ng-template-ng-content-ng-container-and-ngtemplateoutlet-4b7b51223691/
 
 
