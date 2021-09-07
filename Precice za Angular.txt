@@ -514,3 +514,4 @@ https://blog.angular-university.io/how-does-angular-2-change-detection-really-wo
 By default, Angular Change Detection works by checking if the value of template expressions have changed. This is done for all components.
 By default, Angular does not do deep object comparison to detect changes, it only takes into account properties used by the template
 Acts on refernace change
+How does the default change detection mechanism work? or each expression used in the template, it's comparing the current value of the property used in the expression with the previous value of that property. It is checking values used in template
