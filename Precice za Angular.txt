@@ -509,3 +509,6 @@ FILTER PIPE---------------------------------------------------------------------
  ------------------------------------------------------
  Resolver:
 The interface defines a resolve() method that is invoked when the navigation starts. The router waits for the data to be resolved before the route is finally activated. Ceka da se ucitaju podaci pa onda ide na rutu
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+By default, Angular Change Detection works by checking if the value of template expressions have changed. This is done for all components.
+By default, Angular Change Detection works by checking if the value of template expressions have changed. This is done for all components
