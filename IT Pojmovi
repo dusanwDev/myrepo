@@ -1,0 +1,2 @@
+WebSockets allows the server to send information to the client without the client requesting it. In short, every time a user connects to the server, they establish a WebSocket connection as well.
+https://medium.com/neocoast/websockets-a-brief-explanation-and-practical-use-d60d724c1b39
