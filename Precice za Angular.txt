@@ -467,7 +467,7 @@ that we want to merge them into one where one of data sources is the one is tell
 observable 
 combineLates() - combines multiple stram into a new stream. It uses last emited value from each stream and it wont emit anything untill all stream in combine latest have emited atleast once
 shareReplay() - shares observable with all of subscribers. next time useres comes to the page it just reemits all values that it has. FOrm of cahcing
-exaustMap() - 
+exaustMap() - untill user gets a response it will disable creating new response.
 
 ng-container *ngFor, ng-template *ngIf, ng-content put some content in it
 Ng template confitionaly renders somethind in the dom ng-container renders nothing
