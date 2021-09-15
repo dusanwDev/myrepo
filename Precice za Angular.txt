@@ -513,11 +513,14 @@ FILTER PIPE---------------------------------------------------------------------
 The interface defines a resolve() method that is invoked when the navigation starts. The router waits for the data to be resolved before the route is finally activated. Ceka da se ucitaju podaci pa onda ide na rutu
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------p
 https://blog.angular-university.io/how-does-angular-2-change-detection-really-work/
+https://stackblitz.com/edit/angular-ivy-jrpcu9?file=src%2Fapp%2Fchild%2Fchild.component.ts
 By default, Angular Change Detection works by checking if the value of template expressions have changed. This is done for all components.
 By default, Angular does not do deep object comparison to detect changes, it only takes into account properties used by the template
 Acts on refernace change
 How does the default change detection mechanism work? or each expression used in the template, it's comparing the current value of the property used in the expression with the previous value of that property. It is checking values used in template
 use on child
+trigered: event, xhr, timers
+ngDoCheck
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Promise                 
 Emits single value
