@@ -533,3 +533,6 @@ lazy(observable is not called untill we subscribe to a obs)
 ---------------------------------------------
 Retry on error
 https://www.youtube.com/watch?v=eAz5RFsewd8
+
+-------------------------------------------------------------
+ako je 'neki:Subscriptions = new Subscription' onda mora unsubscribe
