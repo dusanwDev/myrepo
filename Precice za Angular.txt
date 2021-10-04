@@ -536,3 +536,5 @@ https://www.youtube.com/watch?v=eAz5RFsewd8
 
 -------------------------------------------------------------
 ako je 'neki:Subscriptions = new Subscription' onda mora unsubscribe
+--------------------------------------------------------------------------
+https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-35.html#%_sec_5.5.2
