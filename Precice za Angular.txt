@@ -514,6 +514,7 @@ The interface defines a resolve() method that is invoked when the navigation sta
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------p
 https://blog.angular-university.io/how-does-angular-2-change-detection-really-work/
 https://stackblitz.com/edit/angular-ivy-jrpcu9?file=src%2Fapp%2Fchild%2Fchild.component.ts
+https://www.mokkapps.de/blog/the-last-guide-for-angular-change-detection-you-will-ever-need/
 By default, Angular Change Detection works by checking if the value of template expressions have changed. This is done for all components.
 By default, Angular does not do deep object comparison to detect changes, it only takes into account properties used by the template
 Acts on refernace change
