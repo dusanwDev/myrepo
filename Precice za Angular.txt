@@ -463,7 +463,9 @@ resolver sluzi da pauzira ucitavanje rute dok se ne uzmu neki podaci
 concat() ceka da se sve observables zavrse
 concatMap()- returns in order. Litle bit slower because it is listening to the source, gets value and proces them one by one
 swithemap() starts new one as soon as it arrives and terminets previous observable. Nice for typeahed searches.(rxjs website). gets latest emited value
-mergeMap() cita sve observable kako koja stigne.If we have Inner observables it has to emit a value for a whole observable to update. If we have multiple data sources
+reacts to values being emited on outer observable and then trigger inner observable. we will recive value of second observable. It cancel subscriptions
+is outer obs is triggered again
+mergeMap() cita sve observable kako koja stigne.If we have Inner observables it has to emit a value for a whole observable to update, it gives us resolt of both obs. If we have multiple data sources
 that we want to merge them into one where one of data sources is the one is telling you when emmision hppens. U prevodu ako hocemo da spojimo ezultat inner + outer
 observable 
 combineLates() - combines multiple stram into a new stream. It uses last emited value from each stream and it wont emit anything untill all stream in combine latest have emited atleast once
