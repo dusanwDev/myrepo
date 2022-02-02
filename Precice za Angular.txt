@@ -469,8 +469,8 @@ mergeMap() cita sve observable kako koja stigne.If we have Inner observables it 
 that we want to merge them into one where one of data sources is the one is telling you when emmision hppens. U prevodu ako hocemo da spojimo ezultat inner + outer
 observable 
 combineLates() - combines multiple stram into a new stream. It uses last emited value from each stream and it wont emit anything untill all stream in combine latest have emited atleast once
-shareReplay() - shares observable with all of subscribers. next time useres comes to the page it just reemits all values that it has. FOrm of cahcing
-exhaustMap() - untill user gets a response creating new request will be disabled. In the example on rxjs website. Map to inner observable, ignore other values until that observable completes.
+shareReplay() - kada imamo request i imamo 2 subskrajbera da ne bi slali dupli request
+exhaustMap() - untill user gets a response creating new request will be disabled. In the example on rxjs website. Map to inner observable, ignore other values until that observable completes. Ignores everything untill inner observeblae is active
 
 
 ng-container *ngFor, ng-template *ngIf, ng-content put some content in it
