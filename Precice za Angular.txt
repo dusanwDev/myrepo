@@ -462,9 +462,8 @@ resolver sluzi da pauzira ucitavanje rute dok se ne uzmu neki podaci
 
 concat() ceka da se sve observables zavrse
 concatMap()- returns in order. Litle bit slower because it is listening to the source, gets value and proces them one by one
-swithemap() starts new one as soon as it arrives and terminets previous observable. Nice for typeahed searches.(rxjs website). gets latest emited value
-reacts to values being emited on outer observable and then trigger inner observable. we will recive value of second observable. It cancel subscriptions
-is outer obs is triggered again
+swithemap() - reacts to value being emitett by outer observable and then triggers inner observable. We will not recieve value of outer observable but we will get 
+value of inner observable. The key thing here is that it cancels all previous subscriptions of outer observble if it is triggered again
 mergeMap() cita sve observable kako koja stigne.If we have Inner observables it has to emit a value for a whole observable to update, it gives us resolt of both obs. If we have multiple data sources
 that we want to merge them into one where one of data sources is the one is telling you when emmision hppens. U prevodu ako hocemo da spojimo ezultat inner + outer
 observable 
@@ -548,3 +547,4 @@ if there is problem with how routing is setup you can use in app.routing.module 
 Resolver: Make routing wait until asynchrounus process is finished
 CanLoad: We dont load module. Does pretty much the same as canLoad but it doesnt load module or component. ProloadingAll doesnt work with canLoad
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+result = a || b; if a is undefined then fallbacvk to b
