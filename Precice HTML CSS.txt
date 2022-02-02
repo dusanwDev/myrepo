@@ -194,3 +194,18 @@ za kontejner u hederu treba staviti max width
 za img{max-width:100%; display:block;}
 ---------------------------------------------------------
 klasa ima prednost u odnosu na tag
+================================================================================================
+width: min(500px,70%)
+isto sto i 
+width: 70%;
+max-width: 500px;
+
+width: max(500px,70%)
+https://developer.mozilla.org/en-US/docs/Web/CSS/max()
+https://developer.mozilla.org/en-US/docs/Web/CSS/min()
+https://www.youtube.com/watch?v=U9VF-4euyRo
+
+//minimum,optimal,maximum
+width: clamp(100px,200px,400px)
+
+margin-inline: auto; instead of margin: 0 auto;
