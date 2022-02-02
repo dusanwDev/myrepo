@@ -472,7 +472,7 @@ combineLates() - combines multiple stram into a new stream. It uses last emited 
 shareReplay() - kada imamo request i imamo 2 subskrajbera da ne bi slali dupli request
 exhaustMap() - untill user gets a response creating new request will be disabled. In the example on rxjs website. Map to inner observable, ignore other values until that observable completes. Ignores everything untill inner observeblae is active
 debounceTime(2000) - dont do anything untill this period of 2000ms has expired
-
+pairwise() - https://www.youtube.com/watch?v=wQSwrLh5F3M
 
 ng-container *ngFor, ng-template *ngIf, ng-content put some content in it
 Ng template confitionaly renders somethind in the dom ng-container renders nothing
