@@ -201,6 +201,10 @@ width: 70%;
 max-width: 500px;
 
 width: max(500px,70%)
+width: 70%
+min-width: 500px
+
+width: max(500px,70%)
 https://developer.mozilla.org/en-US/docs/Web/CSS/max()
 https://developer.mozilla.org/en-US/docs/Web/CSS/min()
 https://www.youtube.com/watch?v=U9VF-4euyRo
