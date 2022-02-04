@@ -548,3 +548,8 @@ Resolver: Make routing wait until asynchrounus process is finished
 CanLoad: We dont load module. Does pretty much the same as canLoad but it doesnt load module or component. ProloadingAll doesnt work with canLoad
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 result = a || b; if a is undefined then fallbacvk to b
+--------------------------------------------------------------------------------
+controlValueAccess
+writealue= uzima vrednost kada upisujemo iz new FormControl(true)
+registerOnChange - notifies formControl that something was changed
+
