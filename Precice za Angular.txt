@@ -552,4 +552,6 @@ result = a || b; if a is undefined then fallbacvk to b
 controlValueAccess
 writealue= uzima vrednost kada upisujemo iz new FormControl(true)
 registerOnChange - notifies formControl that something was changed
+---------------------------------------------------------------------------------
+Most interceptors transform the outgoing request before passing it to the next interceptor in the chain, by calling next.handle(transformedReq). 
 
