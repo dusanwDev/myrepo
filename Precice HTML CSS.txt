@@ -213,3 +213,7 @@ https://www.youtube.com/watch?v=U9VF-4euyRo
 width: clamp(100px,200px,400px)
 
 margin-inline: auto; instead of margin: 0 auto;
+
+width 100% child-a funkcionise samo ako parent ima definisanu sirinu
+
+svi flex itemi da imaju istu sirinu 100% / 4
