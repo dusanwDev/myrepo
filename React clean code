@@ -3,3 +3,9 @@ every time the state changes it will rerun the expensive calculation witch will 
 const total = expensiveCalculation(count)
 so we use use memo which will remember last value and run again if that value changes
 const total = useMemo(()=>expensiveCalculation(count), [count])
+---------------------------------------------------------------------------------------------------------------------------------------------------
+const [object,setObject] = useState({});
+
+changeSmth() {
+setObject((prev)=>({...prev, changedField: value}))
+}
