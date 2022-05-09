@@ -561,3 +561,11 @@ Mostly we use ngOnInit for all the initialization/declaration and avoid stuff to
 So you should use constructor() to setup Dependency Injection and not much else. ngOnInit() is better place to "start" - it's where/when components' bindings are resolved.
 
 localhost is ran on nodejs server
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+<component-a>
+    <component-b></component-b>
+</component-a>
+
+comp-a must have ng-content
+
+ng-content
