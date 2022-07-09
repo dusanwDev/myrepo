@@ -569,3 +569,16 @@ localhost is ran on nodejs server
 comp-a must have ng-content
 
 ng-content
+
+
+
+-----------
+
+fn (key) {
+    const obj = {
+        "a": "one",
+        "b": "two"
+    }
+    
+    return obj[key] ?? 'not found'
+}
