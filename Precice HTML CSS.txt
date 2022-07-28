@@ -217,3 +217,6 @@ margin-inline: auto; instead of margin: 0 auto;
 width 100% child-a funkcionise samo ako parent ima definisanu sirinu
 
 svi flex itemi da imaju istu sirinu 100% / 4
+
+Undeststand flexbox
+https://www.youtube.com/watch?v=fm3dSg4cxRI&t=669s
