@@ -271,7 +271,7 @@ drugi parametar nakon click
     console.log(event.target);
     this.renderer.setStyle(this.elRef.nativeElement, 'color', 'blue');
   }
----------------------------------------------------------
+--------------------------------------------------template-------
 [routerLink]="['/servers', server.id]"
 
 routerLinkActive="active"
@@ -582,3 +582,6 @@ fn (key) {
     
     return obj[key] ?? 'not found'
 }
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ng-template TemplateRef
+ng-container ViewContainerRef
