@@ -585,3 +585,5 @@ fn (key) {
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 ng-template TemplateRef
 ng-container ViewContainerRef
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+ngZone is just a wrapper around ngZone api Zonejs intercepts async operation. So when async operation runs angular triggers change detecion. If we fo example have some get request and the result dont need to show(which in large application can be costly) in template we can run runOutsideAngular ZOne. 
